@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\LoadClass[a4paper,9pt,draft]{extarticle} % 'exarticle' for changing font size which is unchangable in 'article' class.
+\LoadClass[a4paper,9pt]{extarticle} % 'exarticle' for changing font size which is unchangable in 'article' class.
 \ProvidesClass{definitions/vnuhcmj}[VNUHCM Journal article class]
 
 \usepackage{xcolor}
