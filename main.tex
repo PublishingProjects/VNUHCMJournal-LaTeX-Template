@@ -1,0 +1,91 @@
+\documentclass{definitions/vnuhcmj}
+
+\addbibresource{sample.bib}
+
+\renewcommand{\ArticleType}{Research article}
+\title{Title}
+
+\directlua{
+    authors = {
+        create_author(
+            "Firstname Lastname",
+            "email@example.com",
+            {
+                "Affiliation 1",
+                "Affiliation 2"
+            },
+            true
+        ),
+        create_author(
+            "Firstname Lastname",
+            "email@example.com",
+            {
+                "Affiliation 3",
+                "Affiliation 4"
+            },
+            false
+        ),
+        
+        --[[
+            You can add more authors here.
+            Just follow the same structure as above.
+            The first argument is the author's name,
+            the second argument is the author's email,
+            the third argument is a list of affiliations, and
+            the fourth argument is a boolean indicating whether this author is the corresponding author.
+        ]]
+    }
+}
+
+% Name of author(s) in the citation.
+\renewcommand{\CiteAuthors}{F Last, F Last}
+
+\renewcommand{\ArticleReceivedDate}{\today}
+\renewcommand{\ArticleRevisedDate}{}
+\renewcommand{\ArticleAcceptedDate}{}
+\renewcommand{\ArticlePublishedDate}{}
+
+\renewcommand{\FirstPageNumber}{1}
+\setcounter{page}{\FirstPageNumber}
+\renewcommand{\LastPageNumber}{\pageref*{LastPage}}
+
+\renewcommand{\ArticleVolumeYear}{\the\year}
+\renewcommand{\ArticleVolume}{26}
+\renewcommand{\ArticleIssue}{1}
+\renewcommand{\ArticleID}{0000}
+
+\directlua{
+    % These variables will be used in the class file.
+    affiliations = list_affiliations(authors)
+    author_affiliation_indices = list_author_affiliation_indices(authors)
+}
+
+\abstract{
+    \lipsum[1-2]
+}
+\keywords{Keyword1, Keyword2, Keyword3}
+
+\begin{document}
+    \pagestyle{PageStyle}
+    \thispagestyle{FirstPageStyle}
+
+    \MakeSideBar
+    \MakeAbstract
+
+    \phantomsection
+    \section{Introduction}
+    \lipsum[1-5]
+    \vspace{12pt}
+    \par
+    Example citation \supercite{article-example}.
+    \[
+        R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu}
+        + \Lambda g_{\mu\nu}
+        = \frac{8\pi G}{c^4} T_{\mu\nu}
+    \]
+
+    \phantomsection
+    \section{References}
+    \printbibliography[heading=none]
+    
+\end{document}
