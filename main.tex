@@ -1,10 +1,17 @@
+% !TeX program = lualatex
+
 \documentclass{definitions/vnuhcmj}
 
+% Bibliography file
 \addbibresource{sample.bib}
 
+% Article type
 \renewcommand{\ArticleType}{Research article}
+
+% Title of the article
 \title{Title}
 
+% Author information
 \directlua{
     authors = {
         create_author(
@@ -60,9 +67,14 @@
     author_affiliation_indices = list_author_affiliation_indices(authors)
 }
 
+% Abstract: A short, structured (Introduction, Methods, Results and Conclusion),
+% single paragraph summary, from 250 to 500 words, of the major points raised,
+% making evident the key work highlighted in the article.
 \abstract{
     \lipsum[1-2]
 }
+
+% Keywords: About 1 to 5 keywords are recommended.
 \keywords{Keyword1, Keyword2, Keyword3}
 
 \begin{document}
@@ -72,6 +84,7 @@
     \MakeSideBar
     \MakeAbstract
 
+    % Introduction section
     \phantomsection
     \section{Introduction}
     \lipsum[1-5]
@@ -84,8 +97,49 @@
         = \frac{8\pi G}{c^4} T_{\mu\nu}
     \]
 
+    % Methods section
     \phantomsection
-    \section{References}
+    \section{Methods}
+
+    % Results section
+    \phantomsection
+    \section{Results}
+
+    % Discussion section
+    \phantomsection
+    \section{Discussion}
+
+    % Conclusions section
+    \phantomsection
+    \section{Conclusions}
+
+    % List of abbreviations section
+    \phantomsection
+    \section*{List of Abbreviations}
+
+    % Acknowledgements section
+    \phantomsection
+    \section*{Acknowledgements}
+
+    % Funding section
+    \phantomsection
+    \section*{Funding}
+
+    % Author's contributions section
+    \phantomsection
+    \section*{Author's contributions}
+
+    % Declaration of generative AI and AI-assisted technologies in the writing process section
+    \phantomsection
+    \section*{Declaration of generative AI and AI-assisted technologies in the writing process}
+
+    % Competing interests section
+    \phantomsection
+    \section*{Competing Interests}
+
+    % References section
+    \phantomsection
+    \section*{References}
     \printbibliography[heading=none]
     
 \end{document}

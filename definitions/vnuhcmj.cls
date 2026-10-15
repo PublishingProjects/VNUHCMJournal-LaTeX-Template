@@ -104,8 +104,8 @@
 \newcommand{\FirstPageNumber}{1000}
 \newcommand{\LastPageNumber}{\pageref{LastPage}}
 
-\newcommand{\JournalTitle}{VNUHCM Journal of Mathematics and Computing Science}
-\newcommand{\JournalAbbreviation}{VNUHCM J. Math. Comput. Sci.}
+\newcommand{\JournalTitle}{VNUHCM Journal of Science and Technology Development}
+\newcommand{\JournalAbbreviation}{VNUHCM J. Sci. Technol. Dev.}
 \newcommand{\MakeJournalTitle}{\noindent\normalsize\textbf{\textcolor{brown-600}{\JournalTitle}}}
 
 \newcommand{\ArticleVolumeYear}{\the\year}
@@ -251,7 +251,7 @@
     tex.sprint(get_affiliations(affiliations))
 }}
 
-\newcommand{\ArticleDOI}{10.32508/vnuhcmjmcs.v\ArticleVolume i\ArticleIssue .\ArticleID}
+\newcommand{\ArticleDOI}{10.32508/vnuhcmjstd.v\ArticleVolume i\ArticleIssue .\ArticleID}
 \newcommand{\ArticleReceivedDate}{\today}
 \newcommand{\ArticleRevisedDate}{}
 \newcommand{\ArticleAcceptedDate}{}
